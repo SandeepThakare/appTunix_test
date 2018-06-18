@@ -15,6 +15,8 @@ import cors from 'cors';
 import { secretString } from './constants';
 import ActivateRoutes from './routes';
 import { LoggerServices } from './services';
+import { mongoose } from './db/index';
+import { User } from "./model/users";
 
 const app = express();
 
@@ -44,6 +46,22 @@ ActivateRoutes(app);
 
 const env = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
 app.get('/', (req, res) => res.send(`<h1>care app ${env} environment</h1>`));
+
+app.post('/user', (req, res) => {
+    var user = new User({
+        personal : req.body.personal,
+        address : req.body.address
+    });
+
+    user.save().then((result) => {
+        console.log(result)
+        res.send(result);
+    })
+    .catch((err) => {
+        console.log('Unable to add data due to following error: Error: ', JSON.stringify(err, undefined, 2));
+        res.status(400).send(err);
+    })
+});
 
 const port = process.env.NODE_ENV === 'development' ? 3000 : 3001;
 
