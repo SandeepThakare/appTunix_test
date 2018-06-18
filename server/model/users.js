@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-
-var User = mongoose.model('User', {
+var Schema = mongoose.Schema;
+var UserSchema = new Schema({
     personal: {
         firstname: {
             type: String,
@@ -59,5 +59,7 @@ var User = mongoose.model('User', {
         default: null
     }
 });
+
+var User = mongoose.model('User', UserSchema)
 
 export default User;
