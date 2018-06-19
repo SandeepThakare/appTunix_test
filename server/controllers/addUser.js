@@ -1,6 +1,4 @@
 import mongoose from '../db/index';
-// import mongoose from 'mongoose';
-// import { User } from "../model/users";
 import express from 'express';
 import busboyBodyParser from 'busboy-body-parser';
 import bodyParser from 'body-parser';
