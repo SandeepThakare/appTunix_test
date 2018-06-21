@@ -27,4 +27,11 @@ export const {
 	APPLE_TEAM_ID='TEAMID',
 } = process.env;
 
+export const twitterCredentials = {
+	CONSUMER_KEY: '',
+	CONSUMER_SECRET: '',
+	ACCESS_TOKEN: '',
+	ACCESS_TOKEN_SECRET: ''
+}
+
 export const MB = 1024 * 1024;
