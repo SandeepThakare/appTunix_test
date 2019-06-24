@@ -5,7 +5,7 @@
 */
 
 const host = process.env.MONGO_HOST || 'localhost';
-const db = process.env.MONGO_DB || 'twitter_handler';
+const db = process.env.MONGO_DB || 'app_tunix';
 const port = 27017;
 
 export const mongoConnectionString = `mongodb://${host}:${port}/${db}`;
